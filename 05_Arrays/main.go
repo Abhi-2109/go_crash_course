@@ -2,6 +2,10 @@ package main
 
 import "fmt"
 
+func description(a []int) {
+	fmt.Println(a, "length : ", len(a), " Capacity : ", cap(a))
+}
+
 func main() {
 	var fruitArr [2]string
 
@@ -25,4 +29,20 @@ func main() {
 	fmt.Println(fruitSlice)
 	fmt.Println(len(fruitSlice))
 	fmt.Println(fruitSlice[1:3]) // Silcing
+
+	// Slcing
+	fmt.Println("Here we go")
+	a := make([]int, 5, 5)
+	description(a)
+	b := append(a, 2)
+	b[1] = 100
+	description(b)
+
+	fmt.Println("Just check here")
+	description(a)
+
+	for i := 1; i < 10; i++ {
+		a = append(a, i)
+		description(a)
+	}
 }
